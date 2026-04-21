@@ -1,0 +1,422 @@
+/*
+	----------------------------------------------------------------
+	Home Schools — base
+	----------------------------------------------------------------
+*/
+
+.main-mid {
+
+}
+
+/*
+	----------------------------------------------------------------
+	Row 1 — Intro + Find My School
+	----------------------------------------------------------------
+*/
+
+.home-row-1 {
+	padding: 0 0 60px 0;
+}
+
+/* === Mirrors home.css .home-hero pattern (dual-image: desktop in column, mobile floats inside text) === */
+.home-hero-wrap {
+	max-width: 700px;
+	box-sizing: border-box;
+	margin: 0 auto 20px auto;
+	line-height: 1.8em;
+}
+
+.home-hero {
+	display: grid;
+	grid-template-columns: 1fr 200px;
+	gap: 2rem;
+}
+
+.home-hero .for-mobile {
+	display: none;
+}
+
+.home-hero h1,
+.home-hero h4 {
+	line-height: 1.2em;
+}
+
+.home-hero-img {
+	display: block;
+	width: 100%;
+}
+
+.hs-find-school {
+	max-width: 700px;
+	box-sizing: border-box;
+	margin: 0 auto;
+	background: #edb734;
+	border-radius: 13px;
+	border: 5px solid #ffffff;
+	padding: 25px;
+	text-align: center;
+	line-height: 1.6em;
+}
+
+.hs-find-school h3 {
+	margin: 0 0 15px 0;
+}
+
+.hs-find-school-form {
+	margin: 0 auto 12px auto;
+	max-width: 80%;
+	display: grid;
+	grid-template-columns: calc(80% - 10px) 20%;
+	gap: 10px;
+}
+
+.hs-find-school-form input.search-txt {
+	box-sizing: border-box;
+	display: block;
+	border: 1px solid #ddd;
+	font-size: 16px;
+	line-height: normal;
+	color: #555;
+	background-color: #fff;
+	border-radius: 4px;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .07);
+	padding: 10px;
+	width: 100%;
+	height: 43px;
+}
+
+.hs-find-school-form input.search-txt:focus {
+	outline: none;
+	box-shadow: 0 0 0 2px rgba(255,153,0,0.35);
+	border-color: #ff9900;
+}
+
+.hs-find-school-form input.search-txt.not-found {
+	border: 1px solid red;
+}
+
+.hs-find-school-form-wrap {
+	position: relative;
+	box-sizing: border-box;
+}
+
+.hs-find-school-form ._btn.search-btn {
+	height: 43px;
+}
+
+.hs-find-school-helper {
+	font-size: 15px;
+	margin-top: 5px;
+}
+
+#suggestions {
+	position: absolute;
+	top: 100%;
+	left: 1px;
+	right: 1px;
+	background: #fff;
+	max-height: 200px;
+	overflow-y: auto;
+	list-style: none;
+	padding: 0;
+	margin: 4px 0 0;
+	z-index: 10;
+}
+
+#suggestions li {
+	padding: 4px 10px;
+	cursor: pointer;
+	font-size: 14px;
+	text-align: center;
+	border-bottom: 1px solid #efefef;
+	transition: all .25s ease;
+}
+
+#suggestions li.is-active,
+#suggestions li:hover {
+	background: #f2f2f2;
+}
+
+.library-list {
+	display: none;
+}
+
+/*
+	----------------------------------------------------------------
+	Generic row + section styling (rows 2..6)
+	----------------------------------------------------------------
+*/
+
+.hs-row {
+	position: relative;
+	padding-top: 100px;
+	padding-bottom: 60px;
+}
+
+.home-row-2,
+.home-row-4 {
+	background-color: #fbebcd;
+}
+
+/* Branch dividers — alternating left / right */
+.hs-row::before {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: -45px;
+	height: 120px;
+	width: 100%;
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.home-row-2::before { background-image: url('../img/branch-right-trans.png'); }
+.home-row-3::before { background-image: url('../img/branch-left-trans.png'); }
+.home-row-4::before { background-image: url('../img/branch-right-trans.png'); }
+.home-row-5::before { background-image: url('../img/branch-left-trans.png'); }
+
+/* Generic section wrapper used inside each row */
+.hs-section {
+	max-width: 800px;
+	box-sizing: border-box;
+	margin: 0 auto 40px auto;
+	line-height: 1.7em;
+}
+
+.hs-section:last-child {
+	margin-bottom: 0;
+}
+
+.hs-section h4 {
+	margin: 0 0 12px 0;
+}
+
+.hs-section-content p {
+	margin: 0 0 12px 0;
+}
+
+/*
+	----------------------------------------------------------------
+	Why Schools
+	----------------------------------------------------------------
+*/
+
+.hs-video {
+	margin: 25px auto;
+	position: relative;
+	max-width: 800px;
+	aspect-ratio: 16/9;
+}
+
+.hs-video .video-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.7);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	z-index: 2;
+}
+
+.hs-video .video-overlay .play-btn-wrap {
+	width: 90px;
+	height: 70px;
+	background: #fff;
+	border-radius: 18px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all .25s ease;
+	border: 2px solid #fff;
+}
+
+.hs-video .video-overlay .play-btn-wrap:hover {
+	border: 2px solid #f90;
+}
+
+.hs-video iframe {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+/*
+	----------------------------------------------------------------
+	Button rows
+	----------------------------------------------------------------
+*/
+
+.hs-btn-row {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 15px;
+	margin: 20px auto 0 auto;
+}
+
+/*
+	----------------------------------------------------------------
+	Supporting list (Teachers / Students / Families)
+	----------------------------------------------------------------
+*/
+
+.hs-supporting-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.hs-supporting-list li {
+	margin: 0 0 10px 0;
+	line-height: 1.6em;
+}
+
+.hs-supporting-list li strong {
+	font-weight: 700;
+}
+
+/*
+	----------------------------------------------------------------
+	Feature sections
+	----------------------------------------------------------------
+*/
+
+
+/* Stacked variant — heading + content left-aligned, image centered below */
+.hs-stacked-image {
+	margin: 25px auto 0 auto;
+	max-width: 800px;
+	text-align: center;
+}
+
+.hs-stacked-image img {
+	display: block;
+	width: 100%;
+}
+
+/*
+	----------------------------------------------------------------
+	Quotes
+	----------------------------------------------------------------
+*/
+
+.hs-quotes-list {
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+
+/* Quote item uses .home-hero pattern (dual-image: desktop column, mobile float) */
+.hs-quote-item {
+	align-items: center;
+}
+
+.hs-quote-text p {
+	margin: 0 0 10px 0;
+	font-style: italic;
+}
+
+.hs-quote-source {
+	display: block;
+	text-align: right;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+/*
+	----------------------------------------------------------------
+	1000px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 1000px) {
+
+	.home-hero {
+		gap: 10px;
+		grid-template-columns: 1fr 150px;
+	}
+
+	.home-hero > *:last-child {
+		align-self: center;
+	}
+
+}
+
+/*
+	----------------------------------------------------------------
+	800px snap — switch to mobile branches
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 800px) {
+
+	.home-row-1 {
+		padding-bottom: 50px;
+	}
+
+	.hs-row {
+		padding-top: 80px;
+		padding-bottom: 50px;
+	}
+
+	.home-row-2::before,
+	.home-row-4::before {
+		background-image: url('../img/branch-right-trans-mobile.png');
+	}
+
+	.home-row-3::before,
+	.home-row-5::before {
+		background-image: url('../img/branch-left-trans-mobile.png');
+	}
+
+}
+
+/*
+	----------------------------------------------------------------
+	600px snap — stack vertical
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 600px) {
+
+	/* Mirror home.css mobile pattern — desktop image hidden, mobile image floats inside text */
+	.home-hero {
+		display: block;
+	}
+
+	.home-hero-img {
+		display: none;
+	}
+
+	.home-hero .for-mobile {
+		display: block;
+		width: 100px;
+		float: right;
+		margin: 0 0 10px 10px;
+	}
+
+	.home-hero .for-mobile img {
+		display: block;
+	}
+
+	.hs-find-school-form {
+		max-width: 100%;
+	}
+
+	.hs-find-school h3 {
+		font-size: 22px;
+	}
+
+	.hs-btn-row {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+}

@@ -1,0 +1,163 @@
+.mobile-app-wrap {
+	padding-bottom: 20px;
+}
+
+.mobile-app-content {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 20px;
+	align-items: center;
+}
+
+.main-text {
+	line-height: 1.5em;
+	width: 90%;
+	margin: 20px auto;
+}
+
+.main-text h3 {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.main-text strong {
+	font-weight: 600;
+}
+
+.main-text p {
+	margin: 10px 0;
+}
+
+.main-text a {
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+.main-image,
+.download-links {
+	padding: 20px;
+	text-align: center;
+}
+
+.download-links p {
+	margin: 20px 0;
+	line-height: 1.2em;
+}
+
+.download-links img {
+	display: block;
+	margin: 0px auto;
+	max-width: 250px;
+	width: 100%;
+}
+
+.download-links img:hover {
+	transform: translateY(-2px);    
+}
+
+/* 
+	----------------------------------------------------------------
+	1400px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 1400px) {
+ 
+	.marketing-wrap {
+	    gap: 30px;
+	    grid-template-columns: 300px 1fr;		
+	}
+
+}
+
+@media (max-width: 1200px) {
+ 
+	.lang-wrap {
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	.lang-wrap > *:nth-child(1),
+	.lang-wrap > *:nth-child(5) {
+		display: none;
+	}
+
+}
+
+/* 
+	----------------------------------------------------------------
+	1200px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 1200px) {
+
+	.main-image img {
+		max-width: 300px;
+		margin: 0 auto;
+	}
+
+	.main-text {
+		width: 100%;
+		margin: 0;
+	}
+
+}
+
+/* 
+	----------------------------------------------------------------
+	1000px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 1000px) {
+
+	.main-image img {
+		max-width: 200px;
+		width: 100%;
+		margin: 0 auto;
+	}
+
+}
+
+/* 
+	----------------------------------------------------------------
+	900px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 900px) {
+
+    .mobile-app-content {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .mobile-app-content > *:nth-child(2) {
+        grid-column: span 2;
+        order: -1;
+    }
+
+}
+
+/* 
+	----------------------------------------------------------------
+	800px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 800px) {
+
+	.main-image, .download-links {
+		padding: 0;
+	}
+
+}
+
+/* 
+	----------------------------------------------------------------
+	480px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 480px) {
+
+}

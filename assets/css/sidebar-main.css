@@ -1,0 +1,148 @@
+.sidebar {
+	line-height: 1.6em;
+	font-size: 16px;
+}
+
+.side-image img {
+	display: block;
+	width: 100%;
+}
+
+.sidebar ._btn {
+	width: 100%;
+}
+
+.side-divider {
+	border-bottom: 1px solid #555555;
+}
+
+.side-langs {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 5px;
+	align-items: start;
+}
+
+.side-langs .lang-item {
+	text-align: center;
+	font-size: 14px;
+	line-height: 1.4em;
+}
+
+.side-langs .lang-item img {
+	max-width: 80px;
+}
+
+.side-langs .lang-item img:hover {
+	transform: scale(1.1);
+}
+
+.side-image,
+.side-content,
+.sidebar ._btn,
+.side-divider {
+	margin: 0 0 35px 0;
+}
+
+/* 
+	----------------------------------------------------------------
+	Sidebar form
+	----------------------------------------------------------------
+*/
+
+.feedback-form .wpforms-field-label {
+	display: block !important;
+	font-size: 14px !important;
+	margin: 0 0 5px 0 !important;
+    font-weight: 400 !important;
+    color: #222222 !important;
+}
+
+.feedback-form .wpforms-field {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.feedback-form textarea,
+.feedback-form input,
+.feedback-form select {
+	margin: 0 0 15px 0 !important;
+	padding: 12px !important;
+	width: 100% !important;
+	max-width: 100% !important;
+	box-sizing: border-box !important;
+	border-radius: 5px !important;
+	border: 1px solid #cccccc !important;
+}
+
+.feedback-form input {
+	padding: 12px 15px;
+}
+
+.feedback-form input[type='checkbox']
+{
+	width: auto;
+	float: left;
+}
+
+.feedback-form .form-privacy span {
+	font-size: 12px;
+	display: block;
+	margin: 1px 0 0 5px;
+	float: left;
+}
+
+.feedback-form .actions {
+	margin: 10px 0 0 0;
+}
+
+.feedback-form ._btn {
+	display: inline-block !important;
+	background: #f90 !important;
+	padding: 14px 20px !important;
+	font-size: 16px !important;
+	box-shadow: 0em .15em .65em 0em rgba(0,0,0,.25) !important;
+	border-radius: 10px !important;
+	text-align: center !important;
+	font-weight: 500 !important;
+	line-height: 1em !important;
+	cursor: pointer !important;
+	color: #1e1e1e !important;
+	box-sizing: border-box !important;
+	white-space: nowrap !important;
+	height: 100% !important;
+
+    display: flex !important;
+    align-items: center !important; 
+    justify-content: center !important;
+    gap: 5px !important;
+
+    transition: all .25s ease !important;  
+    margin: 20px 0 0 0; 
+    outline: none;
+}
+
+.feedback-form ._btn:hover {
+	transform: translateY(-2px) !important;    
+	box-shadow: 0em .35em 1em rgba(0,0,0,.3) !important; 
+	background: #ffa733 !important; 
+	text-decoration: none !important !important;
+}
+
+.feedback-form .wpforms-error {
+	margin: 0 0 10px 0 !important;
+}
+
+.feedback-form .wpforms-field-description {
+	margin-bottom: 10px !important; 
+}
+
+/* 
+	----------------------------------------------------------------
+	Lekti
+	----------------------------------------------------------------
+*/
+
+.side-lekti-wrap {
+	padding: 0 0 20px 0;
+}

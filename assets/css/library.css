@@ -1,0 +1,1063 @@
+/* 
+	----------------------------------------------------------------
+	Library login
+	----------------------------------------------------------------
+*/
+
+.lib-wrap
+{
+	width: 550px;
+	min-height: 620px;
+	margin: 0 auto 50px auto;
+	border: 2px solid #444444;
+	border-radius: 30px;
+	padding: 80px 50px;
+	box-sizing: border-box;
+	background: #F5F5F6;
+	position: relative;
+	display: flex;
+	align-items: start;
+	justify-content: center;
+	background-image: url(https://lote4kids.com/wp-content/uploads/2022/10/lote-login.gif);
+    background-repeat: no-repeat;
+    background-position: 80% 80%;
+    background-color: #F5F5F6;
+}
+
+.lib__logo {
+	margin: 0 0 20px 0;
+}
+
+.lib__logo img {
+	display: block;
+	max-width: 280px;
+	margin: 0 auto;
+}
+
+.lib__header {
+	font-style: italic;
+	font-size: 20px;
+	margin: 0 0 20px 0;
+	text-align: center;
+	font-weight: 500;
+}
+
+.lib__text {
+	font-size: 14px;
+	margin: 0 0 10px 0;
+	color: #222222;
+	text-align: center;
+	line-height: 1.5em;
+}
+
+.lib__text a { 
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+.lib__text a:hover {
+	color: #ff9900;
+} 
+
+.lib__reminder {
+	margin: 0 0 10px 0;
+	line-height: 1.6em;
+	font-size: 14px;
+}
+
+.lib__barcode {
+	margin: 0 0 10px 0;
+}
+
+.lib__barcode input {
+    display: block;
+    padding: 8px 12px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #cccccc;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.lib__barcode.teacher input {
+	text-transform: none;
+}
+
+.lib__barcode input::placeholder {
+	text-transform: none;
+}
+
+.lib__barcode .lib__error {
+	color: red;
+	text-align: center;
+	margin-top: 5px; 
+	display: block;
+	font-size: 14px;
+	display: none;
+}
+
+.lib__barcode .lib__error a {
+	color: red;
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+.lib__barcode .lib__error a:hover {
+	color: #ff9900;
+}
+
+.lib__remember {
+	font-size: 14px;
+	margin: 0 0 30px 0;
+	text-align: center;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    gap: 5px;
+}
+
+.lib__submit {
+	text-align: center;
+    width: fit-content;
+    margin: 10px auto 20px auto;
+    display: flex;
+    gap: 15px;     
+}
+
+.lib__loggedin-message {
+	width: 100%;
+	text-align: center;
+	margin: 0 0 20px 0;
+}
+
+.lib__loggedin-message span {
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+/* 
+	----------------------------------------------------------------
+	Library dashboard
+	----------------------------------------------------------------
+*/
+
+.dash-wrap {
+	display: grid;
+	grid-template-columns: 1fr 300px;
+	gap: 60px;
+}
+
+.dash-wrap .report__wrap {
+	margin: 0 0 30px 0;
+}
+
+.dash-wrap .report__wrap iframe {
+	width: 100%;
+	min-height: 1000px;
+}
+
+/* 
+	----------------------------------------------------------------
+	Teacher dashboard
+	----------------------------------------------------------------
+*/
+
+.teacher-wrap {
+	max-width: 900px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.teacher-wrap .teacher-details {
+	display: grid;
+	grid-template-columns: 250px 1fr;
+	gap: 40px;
+	margin: 30px 0;
+}
+
+.teacher-wrap .teacher-details .name {
+	font-size: 36px;
+	margin: 0 0 5px 0;
+	font-weight: 500;
+	line-height: 1em;
+}
+
+.teacher-wrap .teacher-details .name a,
+.teacher-wrap .teacher-details .name #teacher-name-divider {
+	font-size: 16px;
+	font-weight: 300;
+	color: #44443d;
+	margin: 0;
+}
+
+#teacher-info-divider {
+	margin: 0;
+}
+
+.teacher-wrap .teacher-details .name #teacher-name-input {
+	font-size: 36px;
+	margin: 0 0 5px 0;
+	padding: 0 10px;
+	font-weight: 500;
+	line-height: 1em;
+	border-radius: 5px;
+}
+
+.teacher-wrap .teacher-details a:not(._btn) {
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+.teacher-wrap .teacher-details a:not(._btn) {
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+.teacher-wrap .teacher-details a:not(._btn):hover {
+	color: #F9BC38;
+}
+
+.teacher-wrap .teacher-details .information {
+	margin: 15px 0 0 0;
+	background: rgba(255, 255, 255, 0.3);
+	padding: 20px;
+	border-radius: 5px;
+	position: relative;
+	transition: all .25s ease;   
+}
+
+.teacher-wrap .teacher-details .information .btn-edit__wrap {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+
+.teacher-wrap .teacher-details .information p {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    max-width: 60%;
+}
+
+.teacher-wrap .teacher-details .information .info-label {
+    font-weight: 500;
+    flex-shrink: 0;
+}
+
+.teacher-wrap .teacher-details .information input {
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    padding: 4px 8px;
+    font-size: 14px;
+    flex: 1;
+    margin: 0 0 5px 0;
+}
+
+.teacher-wrap .teacher-details .information select {
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    padding: 4px 8px;
+    font-size: 14px;
+    flex: 1;
+}
+
+.teacher-wrap .teacher-details .actions {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 10px;
+	margin: 30px 0 0 0;
+}
+
+.teacher-wrap .teacher-avatar {
+    border: 10px solid #efefef;
+    background: #ffffff;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;  /* forces square */
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none !important;
+    width: 100%;
+    max-width: 230px;
+}
+
+.teacher-wrap .teacher-avatar img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;  /* crops to fill without stretching */
+}
+
+.teacher-wrap .teacher-avatar .edit {
+	display: flex;
+	flex-direction: column;  
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	color: #222 !important;
+	text-align: center;
+	font-size: 40px;
+	justify-content: center; 
+	align-items: center;
+	background: rgba(0, 0, 0, 0.6);
+	text-decoration: none !important;
+	color: #fff !important;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s ease;
+}
+
+.teacher-wrap .teacher-avatar:hover .edit {
+    opacity: 1;
+    pointer-events: auto;
+    text-decoration: none;
+    color: #fff !important;
+    text-decoration: none !important;
+}
+
+.teacher-wrap .teacher-avatar .edit span {
+	font-size: 12px;
+	margin: 10px 0 0 0;
+	text-align: center;
+	display: block;
+}
+
+.teacher-wrap .teacher-info__wrap {
+	line-height: 1.6em;
+}
+
+.teacher-wrap .teacher-info__wrap span {
+	margin: 0 3px 0 0;
+}
+
+.teacher-wrap .wpforms-field-readonly {
+	display: none !important;
+}
+
+/* 
+	----------------------------------------------------------------
+	Trial page
+	----------------------------------------------------------------
+*/
+
+.trial-wrap {
+
+}
+
+.trial-wrap .intro-section {
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	gap: 40px;
+	width: 100%;
+	margin: 0 0 40px 0;
+}
+
+.trial-wrap .intro-section .main-text {
+	line-height: 1.6em;
+}
+
+.trial-wrap .intro-section .main-image img {
+	display: block;
+	margin: 0 auto;
+	max-width: 300px;
+	box-sizing: border-box;
+}
+
+.trial-wrap .form-video-section {
+	display: grid;
+	grid-template-columns: 1fr 1.5fr;
+	gap: 40px;
+	margin: 0 0 40px 0;
+}
+
+.trial-wrap .form-video-section .form-wrap .form-label {
+	font-weight: 500;
+	margin: 0 0 20px 0;
+}
+
+.trial-wrap .form-video-section .form-wrap .form {
+	border-radius: 5px;
+}
+
+.trial-wrap .form-video-section .video-wrap .video-label {
+	font-weight: 500;
+	margin: 0 0 20px 0;
+}
+
+.trial-wrap .form-video-section .video-wrap .video {
+	position: relative;
+    padding-top: 56.25%;
+    height: 0;
+    overflow: hidden;
+    margin: 0 0 20px 0;
+}
+
+.trial-wrap .form-video-section .video-wrap .video iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+
+.trial-wrap .form-video-section .video-wrap .video-buttons-label {
+	font-weight: 500;
+}
+
+.trial-wrap .form-video-section .video-wrap .video-buttons {
+	display: flex;
+	justify-content: center; 
+	align-items: center;
+	gap: 20px;              
+}
+
+/* 
+	----------------------------------------------------------------
+	Competition page
+	----------------------------------------------------------------
+*/
+
+.competition-wrap {
+	display: grid;
+	grid-template-columns: 300px 1fr 300px;
+	gap: 40px;
+	margin: 0 0 40px 0;
+}
+
+.competition-wrap .main-content .text {
+	line-height: 1.6em;
+}
+
+.competition-wrap .main-content .text.competition-text img.check {
+	display: block;
+	margin: 0 auto 20px auto;
+}
+
+.competition-wrap .main-content .banners {
+	display: none;
+}
+
+.competition-wrap .main-content .form {
+	border-radius: 5px;
+}
+
+.competition-wrap .left-image {
+	
+}
+
+.competition-wrap .right-image {
+	
+}
+
+.competition-wrap .left-image img,
+.competition-wrap .right-image img {
+	display: block;
+	max-width: 100%;
+	box-sizing: border-box;
+}
+
+.competition-wrap .wpforms-confirmation-container-full ._btn {
+	width: fit-content !important;
+	text-decoration: none !important;
+	margin: 0 auto !important;
+}
+
+/* 
+	----------------------------------------------------------------
+	Trial/Competition form
+	----------------------------------------------------------------
+*/
+
+.trial-form .wpforms-field-label,
+.competition-form .wpforms-field-label {
+	display: block !important;
+	font-size: 14px !important;
+	margin: 0 0 5px 0 !important;
+    font-weight: 500 !important;
+    color: #222222 !important;
+}
+
+.trial-form .wpforms-field,
+.competition-form .wpforms-field {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.trial-form textarea,
+.trial-form input,
+.trial-form select,
+.competition-form textarea,
+.competition-form input,
+.competition-form select {
+	margin: 0 0 15px 0 !important;
+	padding: 12px !important;
+	width: 100% !important;
+	max-width: 100% !important;
+	box-sizing: border-box !important;
+	border-radius: 5px !important;
+	border: 1px solid #cccccc !important;
+}
+
+.trial-form input,
+.competition-form input {
+	padding: 12px 15px;
+}
+
+.trial-form input[type='checkbox'],
+.competition-form input[type='checkbox'] {
+	border: none !important;
+}
+
+.trial-form .wpforms-field.wpforms-field-checkbox ul li,
+.competition-form .wpforms-field.wpforms-field-checkbox ul li {
+	margin: 10px 0 0 0 !important;
+}
+
+.trial-form .wpforms-field.wpforms-field-checkbox ul li > :first-child,
+.competition-form .wpforms-field.wpforms-field-checkbox ul li > :first-child {
+    width: 20px !important;
+    flex-shrink: 0 !important;
+}
+
+.trial-form .wpforms-field.wpforms-field-checkbox ul li input,
+.competition-form .wpforms-field.wpforms-field-checkbox ul li input {
+	margin: 2px 0 0 0 !important;
+}
+
+.trial-form .form-privacy span,
+.competition-form .form-privacy span {
+	font-size: 12px;
+	display: block;
+	margin: 1px 0 0 5px;
+	float: left;
+}
+
+.trial-form .actions,
+.competition-form .actions {
+	margin: 10px 0 0 0;
+}
+
+.trial-form ._btn,
+.competition-form ._btn {
+	display: inline-block !important;
+	background: #f90 !important;
+	padding: 14px 20px !important;
+	font-size: 16px !important;
+	box-shadow: 0em .15em .65em 0em rgba(0,0,0,.25) !important;
+	border-radius: 10px !important;
+	text-align: center !important;
+	font-weight: 500 !important;
+	line-height: 1em !important;
+	cursor: pointer !important;
+	color: #1e1e1e !important;
+	box-sizing: border-box !important;
+	white-space: nowrap !important;
+	height: 100% !important;
+
+    display: flex !important;
+    align-items: center !important; 
+    justify-content: center !important;
+    gap: 5px !important;
+
+    transition: all .25s ease !important;  
+    margin: 20px 0 0 0; 
+    outline: none;
+}
+
+.trial-form ._btn:hover,
+.competition-form ._btn:hover {
+	transform: translateY(-2px) !important;    
+	box-shadow: 0em .35em 1em rgba(0,0,0,.3) !important; 
+	background: #ffa733 !important; 
+	text-decoration: none !important !important;
+}
+
+.trial-form .wpforms-error,
+.competition-form .wpforms-error {
+	margin: 0 0 10px 0 !important;
+}
+
+.trial-form .wpforms-field-description,
+.competition-form .wpforms-field-description {
+	margin-bottom: 10px !important; 
+}
+
+.competition-form .wpforms-list-3-columns ul {
+	background: #efefef;
+	padding: 20px !important;
+	margin: 10px 0 !important;
+	border-radius: 5px;
+	gap: 0px !important;
+}
+
+.terms-btn {
+	text-decoration: underline;
+	text-underline-offset: 2px;
+	transition: all .25s ease;   
+}
+
+.terms-btn:hover {
+	color: #f90;
+}
+
+.embed__content.terms {
+	line-height: 1.6em;
+}
+
+.embed__content.terms p {
+	margin: 0 0 10px 0;
+}
+
+.embed__content.terms a {
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+.embed__content.terms a:hover {
+	color: #f90;
+}
+
+.embed__content.terms ol {
+	list-style-type: decimal;
+	padding-left: 20px;
+	margin: 0 0 10px 0;
+}
+
+.embed__content.terms ol ol {
+	list-style-type: lower-alpha;
+	padding-left: 20px;
+	margin: 0 0 10px 0;
+}
+
+.embed__content.terms ul {
+	list-style-type: circle;
+	padding-left: 20px;
+	margin: 0 0 10px 0;
+}
+
+/* 
+	----------------------------------------------------------------
+	Training page
+	----------------------------------------------------------------
+*/
+
+.training-wrap {
+
+}
+
+.training-wrap .intro-section {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 40px;
+	width: 100%;
+	margin: 0 0 20px 0;
+}
+
+.training-wrap .intro-section .main-text {
+	line-height: 1.6em;
+}
+
+.training-wrap .intro-section .main-image img {
+	display: block;
+	margin: 0 auto;
+	max-width: 300px;
+	box-sizing: border-box;
+}
+
+.training-wrap .form-video-section {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 40px;
+	margin: 0 0 40px 0;
+}
+
+.training-wrap .form-video-section.confirmation {
+	margin: 0 auto 40px auto;
+	display: block;
+	width: 50%;
+}
+
+.training-wrap .form-video-section .form-wrap .form-label {
+	font-weight: 500;
+	margin: 0 0 20px 0;
+}
+
+.training-wrap .form-video-section .form-wrap .form {
+	
+}
+
+.training-wrap .form-video-section .video-wrap .video-label {
+	font-weight: 500;
+	margin: 0 0 20px 0;
+}
+
+.training-wrap .form-video-section .video-wrap .video {
+	position: relative;
+    padding-top: 56.25%;
+    height: 0;
+    overflow: hidden;
+    margin: 0 0 20px 0;
+}
+
+.training-wrap .form-video-section .video-wrap .image img {
+	display: block;
+	margin: 0 auto;
+}
+
+.training-wrap .intro-section .training-text img.check {
+	display: block;
+	margin: 0 auto 20px auto;
+}
+
+.training-wrap .wpforms-confirmation-container-full {
+	padding: 30px !important;
+}
+
+.training-wrap .wpforms-confirmation-container-full ._btn {
+	width: fit-content !important;
+	display: block !important;
+	margin: 0 auto !important;
+	text-decoration: none !important;
+}
+
+.training-wrap .wpforms-confirmation-container-full ._btn i {
+	font-weight: 400 !important;
+}
+
+/* 
+	----------------------------------------------------------------
+	Review page
+	----------------------------------------------------------------
+*/
+
+.review-wrap {
+	margin: 0 0 40px 0;
+}
+
+.review-wrap .intro-section {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 40px;
+	width: 100%;
+	margin: 0 0 20px 0;
+}
+
+.review-wrap .intro-section .main-text {
+	line-height: 1.6em;
+}
+
+.review-wrap .video-wrap {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 40px;
+	margin: 0 auto 20px auto;
+}
+
+.review-wrap .video-wrap:has(> :only-child) {
+	grid-template-columns: 1fr;
+	width: 70%;
+}
+
+.review-wrap .video-wrap .video {
+	position: relative;
+    padding-top: 56.25%;
+    height: 0;
+    overflow: hidden;
+    margin: 0 0 20px 0;
+}
+
+.review-wrap .video-wrap .video iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+
+.review-wrap .video-buttons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 300px;
+}
+
+/* 
+	----------------------------------------------------------------
+	1400px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 1400px) {
+ 
+	.dash-wrap {
+	    gap: 30px;
+	    grid-template-columns: 1fr 250px;		
+	}
+
+	.training-wrap .form-video-section .video-wrap .image img {
+		max-width: 100%;
+	}
+
+	.review-wrap .video-wrap {
+		gap: 20px;
+	}
+
+	.review-wrap .video-buttons {
+		gap: 40px;
+	}
+
+	.competition-wrap {
+		gap: 20px;
+	}
+
+}
+
+/* 
+	----------------------------------------------------------------
+	1200px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 1200px) {
+
+	.trial-wrap .intro-section {
+		margin: 0 0 20px 0;
+	}
+
+	.trial-wrap .form-video-section .video-wrap .video-buttons {
+		display: block;
+	}
+
+	.trial-wrap .form-video-section .video-wrap .video-buttons ._btn {
+		margin: 10px 0 0 0;
+		width: 100%;
+		max-width: 300px;
+	}
+
+	.competition-wrap {
+		grid-template-columns: 220px 1fr 220px;
+		gap: 20px;
+		margin: 0 0 20px 0;
+	}
+
+}
+
+/* 
+	----------------------------------------------------------------
+	1000px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 1000px) {
+
+	.dash-wrap {
+		display: block;
+	}
+
+	.sidebar.dashboard {
+		grid-template-columns: 1fr 1fr;
+		display: grid;
+		gap: 20px;
+	}
+
+	.training-wrap .form-video-section {
+		grid-template-columns: 1fr 1fr;
+		gap: 20px;
+	}
+
+	.trial-wrap .intro-section {
+		gap: 20px;
+	}
+
+	.trial-wrap .form-video-section {
+		grid-template-columns: 1fr 1fr;
+		gap: 20px;
+	}
+
+}
+
+/* 
+	----------------------------------------------------------------
+	900px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 900px) {
+
+    .competition-wrap {
+        display: block;
+	}
+
+	.competition-wrap > *:nth-child(1),
+    .competition-wrap > *:nth-child(3) {
+        display: none;
+    }
+
+    .competition-wrap .main-content .banners {
+    	display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 20px;
+		margin: 20px 0 0 0;
+    }
+
+    .competition-wrap .main-content .banners img {
+    	display: block;
+    	width: 100%;
+    }
+
+}
+
+/* 
+	----------------------------------------------------------------
+	800px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 800px) {
+
+	.lib-wrap {
+		max-width: 500px;
+		width: 100%;
+		padding: 40px 20px;
+		background-size: 300px; /* or use a percentage like 30% */
+	}
+
+	.lib-wrap .lib-wrap__inner {
+		max-width: 300px;
+	}
+
+	.training-wrap .form-video-section {
+		grid-template-columns: 1fr;
+	}
+
+	.training-wrap .form-video-section > *:nth-child(2) {
+		order: -1;
+	}
+
+	.training-wrap .form-video-section .video-wrap .image img {
+		max-width: 400px;
+		margin: 0 auto 20px auto;
+	}
+
+	.training-wrap .form-video-section {
+		margin: 0;
+	}
+
+	.review-wrap {
+		margin: 0 0 20px 0;
+	}
+
+	.review-wrap .intro-section {
+		margin: 0;
+	}
+
+	.review-wrap .video-wrap {
+		grid-template-columns: 1fr;
+	}
+
+	.review-wrap .video-wrap .video {
+		margin: 0;
+	}
+
+	.trial-wrap .intro-section {
+		display: block;
+	}
+
+	.trial-wrap .form-video-section {
+		display: block;
+	}
+
+	.trial-wrap .form-video-section .video-wrap .video-buttons {
+		display: flex;
+	}
+
+	.trial-wrap .form-video-section .video-wrap .video-buttons ._btn {
+		margin: 10px 0 0 0;
+		width: auto;
+		max-width: 300px;
+	}
+
+	.teacher-wrap .teacher-details {
+		display: block;
+		margin: 30px 0;
+	}
+
+	.teacher-wrap .teacher-avatar {
+		margin: 0 auto;
+	}
+
+	.teacher-wrap .start-date br {
+		display: none;
+	}
+
+	.teacher-info__wrap {
+		margin: 20px 0 0 0;
+	}
+
+	.teacher-wrap .teacher-details .name {
+		margin: 40px 0 0 0;
+	}
+
+	.teacher-wrap .teacher-details .actions {
+		grid-template-columns: 1fr 1fr;
+	}
+
+}
+
+/* 
+	----------------------------------------------------------------
+	700px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 700px) {
+
+	.sidebar.dashboard {
+		display: block;
+		max-width: 500px;
+		margin: 0 auto;
+	}
+
+	.review-wrap .video-buttons {
+		gap: 20px;
+	}
+
+	.trial-wrap .form-video-section .video-wrap .video-buttons {
+		display: block;
+		text-align: center;
+	}
+
+	.trial-wrap .form-video-section .video-wrap .video-buttons ._btn {
+		margin: 10px auto 0 auto;
+	}
+
+}
+
+/* 
+	----------------------------------------------------------------
+	480px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 480px) {
+
+	.trial-wrap .form-video-section .video-wrap .video-buttons ._btn {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	.teacher-wrap .teacher-details .actions {
+		display: block;
+	}
+
+	.teacher-wrap .teacher-details .actions ._btn {
+		margin: 0 0 10px 0;
+	}
+
+}

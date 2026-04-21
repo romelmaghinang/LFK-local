@@ -1,0 +1,735 @@
+.book-wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 60px;
+    align-items: start;
+    margin: 0 0 50px 0;
+}
+
+.flipbook-parent {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 65px 40px;
+    overflow: hidden;
+}
+
+.flipbook-wrapper {
+	position: relative;
+	display: inline-block;
+	margin: 0 auto;
+	width: 100%;
+	max-width: 100%;
+	overflow: hidden;
+}
+
+.flipbook-wrapper__loading {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #ffffff;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 50px;
+	display: block;
+	z-index: 9;
+}
+
+.flipbook-wrapper__loading ._loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#flipbook {
+	width: 1000px;
+	height: 600px;
+	overflow: hidden;
+	position: relative;
+	display: block;
+	cursor: pointer;
+}
+
+#flipbook .sheet {
+	background: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	border: 1px solid rgba(0, 0, 0, 0.11);
+}
+
+#flipbook .hard {
+	color: #fff;
+	font-weight: bold;
+	border: none; 
+}
+
+#flipbook .sheet img {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.flipbook-controls {
+	text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+	gap: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flipbook-controls #flipbook-btn-refresh 			{ order: 1 }
+.flipbook-controls #flipbook-btn-audio 				{ order: 2 }
+.flipbook-controls .flipbook-audio 					{ order: 3 }
+.flipbook-controls #flipbook-btn-audio-bilingual 	{ order: 4 }
+.flipbook-controls .flipbook-audio-bilingual 		{ order: 5 }
+.flipbook-controls #flipbook-btn-prev 				{ order: 6 }
+.flipbook-controls #flipbook-btn-next 				{ order: 7 }
+.flipbook-controls #flipbook-btn-rtl 				{ order: 8 }
+.flipbook-controls #flipbook-btn-ltr 				{ order: 9 }
+.flipbook-controls #flipbook-btn-fullscreen 		{ order: 10 }
+
+.flipbook-controls.rtl #flipbook-btn-prev { order: 7; transform: rotate(180deg); }
+.flipbook-controls.rtl #flipbook-btn-next { order: 6; transform: rotate(180deg); }
+
+.flipbook-controls.rtl #flipbook-btn-prev::after { transform: rotate(-180deg) scale(1); bottom: 52px; }
+.flipbook-controls.rtl #flipbook-btn-next::after { transform: rotate(-180deg) scale(1); bottom: 52px; }
+
+.flipbook-controls.rtl #flipbook-btn-prev:hover,
+.flipbook-controls.rtl #flipbook-btn-next:hover { 
+	transform: rotate(180deg) scale(1.1); 
+}
+
+.flipbook-controls.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.flipbook-controls button {
+	background: none;
+	border: none;
+	font-size: 3rem;
+	margin: 0 10px;
+	color: #222222;
+	position: relative;
+	margin: 10px 0;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+.flipbook-controls button:hover {
+	transform: scale(1.1);
+}
+
+.flipbook-controls button i {
+	font-weight: 800;
+    background: #cccccc;
+    border-radius: 15px;
+    border: 1px solid #222222;
+    font-size: 26px;
+    padding: 5px 15px;
+    box-shadow: 0em .15em .65em 0em rgba(0,0,0,.25);
+    cursor: pointer;
+    height: 26px;
+    transition: all .25s ease;
+}
+
+.flipbook-controls button:hover i {
+	background: #bbb;
+}
+
+.flipbook-controls button span {
+	font-size: 18px;
+	font-weight: normal;
+}
+
+.flipbook-controls button img {
+	width: 55px;
+	display: block;
+	cursor: pointer;
+}
+
+.flipbook-controls button#flipbook-btn-audio i,
+.flipbook-controls button#flipbook-btn-audio-bilingual i {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	height: auto;
+	background: #cccccc;
+    border-radius: 5px;
+    border: 1px solid #222222;
+    font-size: 18px;
+    padding: 0px;
+}
+
+.flipbook-controls button.disabled i {
+	border: 1px solid #cccccc;
+    color: #aaa;
+    cursor: default;
+}
+
+
+.flipbook-controls button::after {
+	content: attr(data-tooltip);
+	position: absolute;
+	bottom: -80%; /* below the link */
+	background: #efefef;
+	color: #222222;
+	padding: 3px 8px;
+	border-radius: 3px;
+	border: 1px solid #cccccc;
+	white-space: nowrap;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.3s;
+	font-size: 12px;
+	line-height: 12px;
+}
+
+.flipbook-controls button:hover::after {
+	opacity: 1;
+}
+
+.flipbook-audio audio,
+.flipbook-audio-bilingual audio {
+	display: none;
+	height: 38px;
+}
+
+.book-parent__wrapper {
+	overflow: hidden;
+}
+
+/* 
+	----------------------------------------------------------------
+	Video
+	----------------------------------------------------------------
+*/
+
+.video-wrapper {
+	position: relative;
+	padding-top: 56.25%; /* 16:9 aspect ratio (9/16 = 0.5625) */
+	height: 0;
+	overflow: hidden;
+	margin: 0 0 20px 0;
+}
+
+.video-wrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+
+.actions-wrapper {
+    float: right;
+    position: relative;
+    line-height: 1.3em;
+    font-size: 14px;
+    margin-left: 30px;
+    max-width: 290px;
+}
+
+.action-item {
+	position: relative;	
+    padding: 10px 15px;
+    border-radius: 5px;
+    width: fit-content;
+    display: inline-block;
+    transition: all .25s ease;
+}
+
+.action-item.playback-reminder {
+    color: #222222;
+    display: block;
+    margin: 0 0 15px 0;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* 
+	----------------------------------------------------------------
+	Book details section below
+	----------------------------------------------------------------
+*/
+
+.book-info__wrapper {
+
+}
+
+.book-info {
+	overflow: hidden;
+	width: auto;
+}
+
+.book-info h1,
+.book-info .views,
+.book-info .date,
+.book-info .author,
+.book-info .description {
+	margin: 0;
+	line-height: 1.5em;
+}
+
+.book-info h1 {
+	margin: 0 0 10px 0;
+	font-weight: 600;
+}
+
+.book-info .meta {
+	margin: 0 0 10px 0;
+	display: inline-flex;
+    gap: 10px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.book-info .meta span {
+	display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 3px 10px; 
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    box-sizing: border-box;
+    min-height: 27px;
+}
+
+.book-info .description {
+	font-weight: 400;
+	margin: 5px 0 0 0;
+}
+
+.book-info .description i,
+.book-info .description em {
+	font-weight: 400;
+	color: #666;
+	margin: 0 0 2px 0;
+	display: block;
+}
+
+.book-info .description .universal-meta > br:first-of-type {
+	display: none;
+}
+
+.wc_name-wrapper,
+.wc_email-wrapper {
+    display: none !important;
+}
+
+/* 
+	----------------------------------------------------------------
+	Comment form - overwrite WPDiscuz styles
+	----------------------------------------------------------------
+*/
+
+.comments {
+	position: relative;
+	width: 100%;
+}
+
+#wpdiscuz-comment-message {
+	top: 10px !important;
+	right: 0px !important;
+    position: absolute !important;
+    background: none !important;
+    color: red !important;
+    padding: 0 !important;
+}
+
+.wpdiscuz-message-error {
+    background: none !important;
+    color: red !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    text-align: right !important;
+}
+
+#wpdcom .wc_comm_submit.wpd-prim-button {
+	display: inline-block;
+	background: #f90;
+	padding: 14px 20px;
+	font-size: 16px;
+	box-shadow: 0em .15em .65em 0em rgba(0,0,0,.25);
+	border-radius: 10px;
+	text-align: center;
+	font-weight: 500;
+	line-height: 1em;
+	cursor: pointer;
+	color: #1e1e1e;
+	box-sizing: border-box;
+	white-space: nowrap;
+
+	font-family: "Poppins", sans-serif !important;
+	letter-spacing: 0px !important;
+
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    gap: 5px;
+
+    transition: all .25s ease;   
+}
+
+#wpdcom .wc_comm_submit.wpd-prim-button:hover {
+	transform: translateY(-2px);    
+	box-shadow: 0em .35em 1em rgba(0,0,0,.3); 
+	background: #ffa733; 
+	text-decoration: none !important;
+}
+
+#wpdcom .wpd-comment-footer {
+	display: none !important;
+}
+
+#wpdcom.wpd-layout-2 .wpd-form .wpdiscuz-textarea-wrap textarea {
+	height: 64px !important;
+}
+
+#wpdcom .wpd-blog-guest .wpd-comment-author, 
+#wpdcom .wpd-blog-guest .wpd-comment-author a {
+	color: #222222 !important;
+}
+
+#comments,
+#wpdcom {
+	margin: 0 !important;
+	max-width: 100% !important;
+}
+
+#wpdcom .wpd-form-head {
+	display: none !important;
+}
+
+#wpdcom .wpd-form-wrap {
+	margin-top: 20px !important;
+}
+
+#wpdcom.wpd-layout-2 .wpd-comment {
+	margin-bottom: 0 !important;
+}
+
+#wpdcom .wpd-thread-head {
+	border-bottom: 0px !important;
+}
+
+#wpdcom .wpd-comment .wpd-comment-right {
+	padding-bottom: 15px !important;
+    flex-grow: 0 !important;
+    width: 100% !important;
+    background: #efefef !important;
+    padding: 15px 20px !important;
+    margin-bottom: 10px !important;
+    border-radius: 5px !important;
+    position: relative;
+}
+
+#wpdcom .wpd-comment-text {
+	margin: 10px 0 0 0 !important;
+	padding: 0 0 0 0 !important;
+}
+
+#wpdiscuz-loading-bar {
+	display: none !important;
+}
+
+#wpdcom .wpd-thread-list {
+	padding: 0 !important;
+	margin: 20px 0 0 0;
+}
+
+#wpdcom form {
+	width: 100% !important;
+}
+
+#wpdcom #wpd-threads {
+	margin-top: 0 !important;
+}
+
+#wpdcom .wpd-blog-post_author .wpd-comment-author, 
+#wpdcom .wpd-blog-post_author .wpd-comment-author a {
+	color: #222222 !important;
+}
+
+#wpdcom .wpd-form .wpd-avatar img, 
+#wpdcom .wpd-form .wpd-avatar img.avatar {
+	background: none !important;
+	border: none !important;
+}
+
+#wpdcom.wpd-layout-2 .wpd-form .wpd-avatar img, 
+#wpdcom.wpd-layout-2 .wpd-form .wpd-avatar img.avatar {
+	max-width: 60px !important;
+	width: 60px !important;
+	height: 60px !important;
+}
+
+.custom_field_6939180959ceb-wrapper {
+	display: none !important;
+}
+
+.wpd-cf-label {
+	display: none !important;
+}
+
+.wpd-bottom-custom-fields {
+	padding: 0 !important;
+	margin: 0 !important;
+	position: absolute !important;
+	top: 30px !important;
+	right: 20px !important;
+}
+
+.wpd-cf-value {
+	padding: 0 !important;
+	color: #222222 !important;
+	text-align: right !important;
+	font-style: italic !important;
+	font-size: 15px !important;
+}
+
+#wpdcom .wpd-comment-text p {
+	margin: 0 !important;
+}
+
+#wpdcom .wpd-comment .wpd-blog-administrator {
+	margin-left: 40px !important;
+}
+
+#wpdcom.wpd-layout-2 .wpd-comment.wpd-reply .wpd-comment-wrap.wpd-blog-post_author {
+	border-left: 2px solid #f9bc38 !important;
+    border-radius: 0px 5px 5px 0px !important;
+    padding: 0px !important;
+    margin: 0 0 15px 0 !important;
+}
+
+#wpdcom.wpd-layout-2 .wpd-comment.wpd-reply .wpd-comment-wrap.wpd-blog-post_author .wpd-comment-right {
+	margin: 0px !important;
+}
+
+#wpdcom .wpd-comment .wpd-blog-administrator .wpd-avatar {
+	display: none !important;
+}
+
+#wpdcom.wpd-layout-2 .wpd-comment .wpd-avatar img, 
+#wpdcom.wpd-layout-2 .wpd-comment .wpd-avatar img.avatar {
+	border-bottom: none !important;
+    border-radius: 50% !important;
+    padding: 4px !important;
+}
+
+/* 
+	----------------------------------------------------------------
+	Flipbook fullscreen styles
+	----------------------------------------------------------------
+*/
+
+.flipbook-parent.is-fullscreen {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 99999; /* high enough to clear header/nav/overlays */
+    background: #000;
+	background-size: 100% 100%; /* stretches image to fill both axes */
+	background-position: center;
+	background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.flipbook-parent.is-fullscreen #flipbook {
+    transform-origin: center center;
+    transform: scale(var(--fb-scale, 1)) !important;
+    flex-shrink: 0;
+}
+
+/*
+.flipbook-parent.is-fullscreen #flipbook-btn-refresh {
+    display: none;
+}
+
+.flipbook-parent.is-fullscreen .flipbook-wrapper {
+    overflow: visible;
+}
+*/
+
+/* 
+	----------------------------------------------------------------
+	1400px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 1400px) {
+ 
+	.book-wrap {
+	    gap: 30px;
+	    grid-template-columns: 1fr 250px;		
+	}
+
+	.actions-wrapper {
+		max-width: 250px;
+	}
+
+}
+
+/* 
+	----------------------------------------------------------------
+	1200px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 1200px) {
+ 
+	.actions-wrapper {
+		max-width: 200px;
+	}
+
+	.flipbook-controls {
+		flex-wrap: wrap;
+	}
+
+	.flipbook-controls .flipbook-audio,
+	.flipbook-controls .flipbook-audio-bilingual {
+		order: 20; 
+		flex-basis: 100%;
+	  	display: flex;
+  		justify-content: center;
+	}
+
+}
+
+/* 
+	----------------------------------------------------------------
+	1000px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 1000px) {
+ 
+	.book-wrap {
+	    grid-template-columns: 1fr 200px;		
+	}
+
+	.flipbook-controls {
+		gap: 10px;
+	}
+
+	.flipbook-parent {
+		padding: 40px 30px 30px 30px;
+	}
+
+}
+
+/* 
+	----------------------------------------------------------------
+	900px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 900px) {
+ 
+	.actions-wrapper {
+		float: none;
+		margin: 0;
+		max-width: 100%;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		display: none;
+	}
+
+	.actions-wrapper .action-item.playback-reminder {
+		display: inline-block;
+	}
+
+	.actions-wrapper ._btn {
+		white-space: nowrap;
+	}
+
+}
+
+/* 
+	----------------------------------------------------------------
+	800px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 800px) {
+ 
+	.book-wrap {
+		display: block;
+		margin-bottom: 20px;
+	}
+
+}
+
+/* 
+	----------------------------------------------------------------
+	600px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 600px) {
+
+	.flipbook-controls {
+		gap: 4px;
+		flex-wrap: wrap;
+	}
+
+	.flipbook-controls button i {
+		height: 18px;
+		font-size: 18px;
+		padding: 5px 10px;
+	}
+
+	.flipbook-controls button img {
+		width: 44px;
+	}
+
+}
+
+/* 
+	----------------------------------------------------------------
+	480px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 480px) {
+
+}
+
+/* 
+	----------------------------------------------------------------
+	on mobile, disable tooltip of flipbook controls
+	----------------------------------------------------------------
+*/
+
+@media (hover: none) {
+
+	.flipbook-controls button::after {
+		display: none;
+	}
+
+}

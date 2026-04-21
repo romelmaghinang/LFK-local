@@ -1,0 +1,299 @@
+.sidebar {
+	line-height: 1.6em;
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+
+.sidebar .links li
+{
+	margin: 0 0 8px 0;
+}
+
+.sidebar .logged-in-details .details .item a:hover
+{
+	color: #f90;
+}
+
+/* 
+	----------------------------------------------------------------
+	Staff logged in details
+	----------------------------------------------------------------
+*/
+
+.logged-in-details {
+	background: #efefef;
+	border-radius: 5px;	
+	overflow: hidden;
+	margin: 0 0 30px 0;
+} 
+
+.logged-in-details .label {
+	background: #ffffff;
+	padding: 8px 12px 6px 12px;
+	font-weight: 500;
+}
+
+.logged-in-details .details {
+	padding: 10px 12px;
+}
+
+.logged-in-details .details .item,
+.logged-in-details .details .item a {
+    display: flex;
+    align-items: center; 
+    gap: 8px;	
+}
+
+.logged-in-details .details  .item a:hover {
+	color: #f90;
+}
+
+/* 
+	----------------------------------------------------------------
+	MARC records table
+	----------------------------------------------------------------
+*/
+
+.marc-records-table {
+	border-collapse: collapse;
+}
+
+.marc-records-table tr th,
+.marc-records-table tr td {
+	text-align: left;
+	border: 1px solid #ccc;
+	padding: 10px 25px;
+	font-weight: 500;
+	white-space: nowrap;
+}
+
+.marc-records-table tr th {
+	font-size: 18px;
+	line-height: 1.4em;
+	background: #efefef;
+}
+
+.marc-records-table tr td a {
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+.marc-records-table tr td a:hover {
+	color: #f90;
+}
+
+/* 
+	----------------------------------------------------------------
+	Language breakdown
+	----------------------------------------------------------------
+*/
+
+.breakdown-wrap {
+
+}
+
+.breakdown-wrap .summary {
+	font-size: 18px;
+	font-weight: 500;
+	margin: 0 0 10px 0;
+}
+
+.breakdown-wrap .summary .total-titles {
+	float: left;
+}
+
+.breakdown-wrap .summary .most-recent {
+	float: right;
+}
+
+.breakdown-wrap .summary .total-titles span,
+.breakdown-wrap .summary .most-recent span {
+	color: #f90;
+	font-weight: 500;
+}
+
+.breakdown-table {
+	border-collapse: collapse;
+}
+
+.breakdown-table tr th,
+.breakdown-table tr td {
+	text-align: left;
+	border: 1px solid #ccc;
+	padding: 10px 25px;
+	font-weight: 500;
+	white-space: nowrap;
+}
+
+.breakdown-table tr td.title img {
+    width: 40px;
+    display: inline-block;
+    margin: 0px 5px -10px 0;
+}
+
+.breakdown-table tr th.book-count,
+.breakdown-table tr td.book-count {
+	text-align: center;
+}
+
+.breakdown-table tr td.title a:hover {
+	color: #f90;
+}
+
+.breakdown-table tr th {
+	font-size: 18px;
+	line-height: 1.4em;
+	background: #efefef;
+}
+
+/* 
+	----------------------------------------------------------------
+	Sidebar form
+	----------------------------------------------------------------
+*/
+
+.side-content h4 {
+	font-weight: 500;
+	margin: 30px 0 0 0;
+}
+
+.side-content h4 em {
+	font-weight: 400;
+}
+
+.feedback-form .wpforms-field-label {
+	display: block !important;
+	font-size: 14px !important;
+	margin: 0 0 5px 0 !important;
+    font-weight: 500 !important;
+    color: #222222 !important;
+}
+
+.feedback-form .wpforms-field {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.feedback-form textarea,
+.feedback-form input,
+.feedback-form select {
+	margin: 0 0 15px 0 !important;
+	padding: 12px !important;
+	width: 100% !important;
+	max-width: 100% !important;
+	box-sizing: border-box !important;
+	border-radius: 5px !important;
+	border: 1px solid #cccccc !important;
+}
+
+.feedback-form input {
+	padding: 12px 15px;
+}
+
+.feedback-form input[type='checkbox']
+{
+	width: auto;
+	float: left;
+}
+
+.feedback-form .form-privacy span {
+	font-size: 12px;
+	display: block;
+	margin: 1px 0 0 5px;
+	float: left;
+}
+
+.feedback-form .actions {
+	margin: 10px 0 0 0;
+}
+
+.feedback-form ._btn {
+	display: inline-block !important;
+	background: #f90 !important;
+	padding: 14px 20px !important;
+	font-size: 16px !important;
+	box-shadow: 0em .15em .65em 0em rgba(0,0,0,.25) !important;
+	border-radius: 10px !important;
+	text-align: center !important;
+	font-weight: 500 !important;
+	line-height: 1em !important;
+	cursor: pointer !important;
+	color: #1e1e1e !important;
+	box-sizing: border-box !important;
+	white-space: nowrap !important;
+	height: 100% !important;
+
+    display: flex !important;
+    align-items: center !important; 
+    justify-content: center !important;
+    gap: 5px !important;
+
+    transition: all .25s ease !important;  
+    margin: 20px 0 0 0; 
+    outline: none;
+}
+
+.feedback-form ._btn:hover {
+	transform: translateY(-2px) !important;    
+	box-shadow: 0em .35em 1em rgba(0,0,0,.3) !important; 
+	background: #ffa733 !important; 
+	text-decoration: none !important !important;
+}
+
+.feedback-form .wpforms-error {
+	margin: 0 0 10px 0 !important;
+}
+
+.feedback-form .wpforms-field-description {
+	margin-bottom: 10px !important; 
+}
+
+/* 
+	----------------------------------------------------------------
+	1400px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 1400px) {
+
+}
+
+/* 
+	----------------------------------------------------------------
+	1200px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 1200px) {
+
+}
+
+/* 
+	----------------------------------------------------------------
+	1000px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 1000px) {
+
+}
+
+/* 
+	----------------------------------------------------------------
+	800px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 800px) {
+
+}
+
+/* 
+	----------------------------------------------------------------
+	480px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 480px) {
+
+}

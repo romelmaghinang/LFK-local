@@ -1,0 +1,271 @@
+.sidebar {
+	line-height: 1.4em;
+}
+
+.sidebar__label {
+	font-size: 20px;
+	font-weight: 600;
+	margin: 0 0 15px 0;
+}
+
+.sidebar__item {
+	margin: 0 0 30px 0;
+}
+
+.sidebar__item a {
+	font-size: 14px;
+    line-height: 1.4em;
+	align-items: start;
+	font-weight: 500;
+	overflow: hidden;
+}
+
+.sidebar__item a:hover {
+	color: #ff9900;
+}
+
+.sidebar__item a i {
+	transition: all .25s ease;   
+}
+
+.sidebar__item a:hover i {
+	color: #ff9900;
+	border-color: #ff9900;
+}
+
+.sidebar__item a img {
+	display: block;
+	width: 100%;
+}
+
+.sidebar__item .img__wrap {
+	position: relative;
+	overflow: hidden;
+}
+
+.sidebar__item .img__wrap.flipbook {
+	
+}
+
+.sidebar__item .img__wrap.flipbook::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 80px;
+    pointer-events: none;
+    background: linear-gradient(
+	    to right,
+	    rgba(0, 0, 0, 0.18),
+	    rgba(0, 0, 0, 0.10) 35%,
+	    rgba(0, 0, 0, 0.03) 70%
+	);
+}
+
+.sidebar__item .img__wrap i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 3px;
+    font-weight: 700;
+    font-size: 12px;
+	background: rgba(0, 0, 0, 0.5); /* transparent dark background */
+}
+
+.sidebar__item.similar-books .img__wrap i {
+    padding: 5px;
+    font-size: 18px;
+}
+
+/* 
+	----------------------------------------------------------------
+	Reward driven
+	----------------------------------------------------------------
+*/
+
+.sidebar__item.reward-driven .sidebar__links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.sidebar__item.reward-driven .sidebar__links a.filler {
+	visibility: hidden;
+}
+
+.sidebar__item.reward-driven .sidebar__links a img {
+	margin: 0 0 5px 0;
+}
+
+.sidebar__item.reward-driven .sidebar__links a {
+	text-align: center;
+}
+
+/* 
+	----------------------------------------------------------------
+	Reward driven - learning dashboard
+	----------------------------------------------------------------
+*/
+
+.ld-details__wrap .heading {
+	font-size: 24px;
+	text-align: center;
+	margin: 0 0 20px 0;
+	font-weight: 600;
+}
+
+.ld-details__wrap table {
+	border-collapse: collapse;
+	margin: 0 0 40px 0;
+}
+
+.ld-details__wrap table tr th,
+.ld-details__wrap table tr td {
+	text-align: center;
+	border: 1px solid #ccc;
+	padding: 10px 25px;
+	font-weight: 500;
+	width: 20%;
+}
+
+.ld-details__wrap table tr th {
+	font-size: 18px;
+	line-height: 1.4em;
+	background: #efefef;
+}
+
+.ld-details__wrap .ld-details__charts {
+	display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    align-items: center;
+	justify-items: center; /* horizontal */
+}
+
+.ld-details__wrap .ld-details__charts .chart {
+
+}
+
+.ld-details__wrap .ld-details__charts .chart .chart-label {
+	font-size: 20px;
+	margin: 0 0 20px 0;
+	text-align: center;
+	font-weight: 500;
+}	
+
+/* 
+	----------------------------------------------------------------
+	Read it your way
+	----------------------------------------------------------------
+*/
+
+.sidebar__item.read-it-your-way .sidebar__links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.sidebar__item.read-it-your-way .sidebar__links a span {
+	display: block;
+	width: 100%;
+	padding: 3px 5px;
+	background: #ffffff;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.sidebar__item.read-it-your-way a {
+	border-radius: 5px;
+}
+
+/* 
+	----------------------------------------------------------------
+	Related activities
+	----------------------------------------------------------------
+*/
+
+.sidebar__item.related-activities a {
+	display: grid; 
+	grid-template-columns: 10% 1fr; 
+	gap: 10px;
+	margin: 0 0 10px 0;
+	align-items: center;
+}
+
+/* 
+	----------------------------------------------------------------
+	Similar books
+	----------------------------------------------------------------
+*/
+
+.sidebar__item.similar-books .sidebar__links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.sidebar__item.similar-books a .native-title,
+.sidebar__item.similar-books a .english-title {
+	font-size: 14px;
+	margin: 5px 0 0 0;
+}
+
+.sidebar__item.similar-books .img__wrap {
+	border-radius: 5px;
+	margin: 0 0 5px 0;
+}
+
+/* 
+	----------------------------------------------------------------
+	1400px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 1400px) {
+
+}
+
+/* 
+	----------------------------------------------------------------
+	1200px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 1200px) {
+
+}
+
+/* 
+	----------------------------------------------------------------
+	1000px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 1000px) {
+
+}
+
+/* 
+	----------------------------------------------------------------
+	800px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 800px) {
+
+}
+
+/* 
+	----------------------------------------------------------------
+	480px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 480px) {
+
+}

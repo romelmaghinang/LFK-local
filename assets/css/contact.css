@@ -1,0 +1,209 @@
+.contact-wrap {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+	align-items: start;
+	line-height: 1.6em;
+	margin: 30px 0;
+}
+
+.contact-wrap h2 {
+	font-size: 36px;
+	font-weight: 700;
+	color: #444;
+	margin: 40px 0 20px 0;
+}
+
+.contact-wrap a {
+    color: #000000;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.contact-wrap a:hover {
+    color: #ff9900;
+}
+
+.contact-wrap p {
+    margin: 15px 0;
+}
+
+.contact-wrap strong {
+    font-weight: 600;
+}
+
+.contact-share {
+	margin: 100px 0 0 0;
+}
+
+/* 
+	----------------------------------------------------------------
+	Contact Us form
+	----------------------------------------------------------------
+*/
+
+.contact-form .wpforms-field-label {
+	display: block !important;
+	font-size: 14px !important;
+	margin: 0 0 5px 0 !important;
+    font-weight: 400 !important;
+    color: #222222 !important;
+}
+
+.contact-form .wpforms-field {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.contact-form textarea,
+.contact-form input,
+.contact-form select {
+	margin: 0 0 15px 0 !important;
+	padding: 12px !important;
+	width: 100% !important;
+	max-width: 100% !important;
+	box-sizing: border-box !important;
+	border-radius: 5px !important;
+	border: 1px solid #cccccc !important;
+}
+
+.contact-form input {
+	padding: 12px 15px;
+}
+
+.contact-form input[type='checkbox'] {
+	border: none !important;
+}
+
+.contact-form .wpforms-field.wpforms-field-checkbox ul li {
+	margin: 10px 0 0 0 !important;
+}
+
+.contact-form .wpforms-field.wpforms-field-checkbox ul li > :first-child {
+    width: 20px !important;
+    flex-shrink: 0 !important;
+}
+
+.contact-form .wpforms-field.wpforms-field-checkbox ul li input {
+	margin: 2px 0 0 0 !important;
+}
+
+.contact-form .form-privacy span {
+	font-size: 12px;
+	display: block;
+	margin: 1px 0 0 5px;
+	float: left;
+}
+
+.contact-form .actions {
+	margin: 10px 0 0 0;
+}
+
+.contact-form ._btn {
+	display: inline-block !important;
+	background: #f90 !important;
+	padding: 14px 20px !important;
+	font-size: 16px !important;
+	box-shadow: 0em .15em .65em 0em rgba(0,0,0,.25) !important;
+	border-radius: 10px !important;
+	text-align: center !important;
+	font-weight: 500 !important;
+	line-height: 1em !important;
+	cursor: pointer !important;
+	color: #1e1e1e !important;
+	box-sizing: border-box !important;
+	white-space: nowrap !important;
+	height: 100% !important;
+
+    display: flex !important;
+    align-items: center !important; 
+    justify-content: center !important;
+    gap: 5px !important;
+
+    transition: all .25s ease !important;   
+    outline: none;
+}
+
+.contact-form ._btn:hover {
+	transform: translateY(-2px) !important;    
+	box-shadow: 0em .35em 1em rgba(0,0,0,.3) !important; 
+	background: #ffa733 !important; 
+	text-decoration: none !important !important;
+}
+
+.contact-form .wpforms-error {
+	margin: 0 0 10px 0 !important;
+}
+
+.contact-form .wpforms-field-description {
+	margin-bottom: 10px !important; 
+}
+
+/* 
+	----------------------------------------------------------------
+	1400px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 1400px) {
+
+}
+
+/* 
+	----------------------------------------------------------------
+	1200px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 1200px) {
+
+}
+
+/* 
+	----------------------------------------------------------------
+	1000px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 1000px) {
+
+}
+
+/* 
+	----------------------------------------------------------------
+	800px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 800px) {
+
+	.contact-wrap {
+		display: block;
+		margin: 0;
+	}
+
+	.contact-share {
+		margin-top: 20px;
+	}
+
+}
+
+/* 
+	----------------------------------------------------------------
+	700px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 700px) {
+
+}
+
+/* 
+	----------------------------------------------------------------
+	480px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 480px) {
+
+}

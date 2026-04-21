@@ -1,0 +1,286 @@
+.group-item {
+	margin: 0 0 60px 0;
+}
+
+.faq-wrap {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 60px ;
+}
+
+.faq-wrap .column.right img {
+	display: block;
+	width: 50%;
+	margin: 0 auto;
+}
+
+.faq-wrap .column.right h4 {
+	margin: 30px 0 0 0;
+	line-height: 1.6em;
+}
+
+.faq-wrap a:hover {
+	color: #ff9900;
+}
+
+.faq-item {
+	margin: 0 0 20px 0;
+}
+
+.faq-content {
+	display: block;
+	line-height: 1.5em;
+}
+
+.faq-content a {
+	color: #ff9900;
+}
+
+.faq-content a:hover {
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+.faq-content-inner {
+	padding: 15px 30px 0px 30px;
+}
+
+.faq-toggle-all {
+	margin: 0 0 20px 0;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px;                      
+}
+
+.faq-toggle-all:hover {
+    background: #d6a530;
+}
+
+.faq-toggle-all i {
+    transition: transform 0.3s;
+    margin: 0 3px 0 0;
+}
+
+.faq-title {
+    cursor: pointer;
+    transition: color 0.3s;
+    font-size: 20px;
+    font-weight: 600;
+	display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    line-height: 1.2em;
+}
+
+.faq-title.active {
+    
+}
+
+.faq-title i.lni {
+    font-style: normal;
+    width: 25px;
+    color: #ff9900;
+    font-size: 25px;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.faq-wrap > :first-child {
+	margin-top: 24px;
+}
+
+.faq-wrap h3 {
+	text-decoration: underline;
+	text-underline-offset: 2px;
+	margin: 30px 0;
+	line-height: 1.4em;
+}
+
+.download-wrap {
+	float: right;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    gap: 5px;
+}
+
+.download-wrap a {
+	text-decoration: underline;
+}
+
+/* 
+	----------------------------------------------------------------
+	Question form
+	----------------------------------------------------------------
+*/
+
+.faq-contact-form .wpforms-field-label {
+	display: block !important;
+	font-size: 14px !important;
+	margin: 0 0 5px 0 !important;
+    font-weight: 400 !important;
+    color: #222222 !important;
+}
+
+.faq-contact-form .wpforms-field {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.faq-contact-form textarea,
+.faq-contact-form input,
+.faq-contact-form select {
+	margin: 0 0 15px 0 !important;
+	padding: 12px !important;
+	width: 100% !important;
+	max-width: 100% !important;
+	box-sizing: border-box !important;
+	border-radius: 5px !important;
+	border: 1px solid #cccccc !important;
+}
+
+.faq-contact-form input {
+	padding: 12px 15px;
+}
+
+.faq-contact-form input[type='checkbox'] {
+	border: none !important;
+}
+
+.faq-contact-form .wpforms-field.wpforms-field-checkbox ul li {
+	margin: 10px 0 0 0 !important;
+}
+
+.faq-contact-form .wpforms-field.wpforms-field-checkbox ul li > :first-child {
+    width: 20px !important;
+    flex-shrink: 0 !important;
+}
+
+.faq-contact-form .wpforms-field.wpforms-field-checkbox ul li input {
+	margin: 2px 0 0 0 !important;
+}
+
+.faq-contact-form .form-privacy span {
+	font-size: 12px;
+	display: block;
+	margin: 1px 0 0 5px;
+	float: left;
+}
+
+.faq-contact-form .actions {
+	margin: 10px 0 0 0;
+}
+
+.faq-contact-form ._btn {
+	display: inline-block !important;
+	background: #f90 !important;
+	padding: 14px 20px !important;
+	font-size: 16px !important;
+	box-shadow: 0em .15em .65em 0em rgba(0,0,0,.25) !important;
+	border-radius: 10px !important;
+	text-align: center !important;
+	font-weight: 500 !important;
+	line-height: 1em !important;
+	cursor: pointer !important;
+	color: #1e1e1e !important;
+	box-sizing: border-box !important;
+	white-space: nowrap !important;
+	height: 100% !important;
+
+    display: flex !important;
+    align-items: center !important; 
+    justify-content: center !important;
+    gap: 5px !important;
+
+    transition: all .25s ease !important;   
+    outline: none;
+}
+
+.faq-contact-form ._btn:hover {
+	transform: translateY(-2px) !important;    
+	box-shadow: 0em .35em 1em rgba(0,0,0,.3) !important; 
+	background: #ffa733 !important; 
+	text-decoration: none !important !important;
+}
+
+.faq-contact-form .wpforms-error {
+	margin: 0 0 10px 0 !important;
+}
+
+.faq-contact-form .wpforms-field-description {
+	margin-bottom: 10px !important; 
+}
+
+/* 
+	----------------------------------------------------------------
+	1400px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 1400px) {
+
+}
+
+/* 
+	----------------------------------------------------------------
+	1200px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 1200px) {
+
+	.faq-wrap {
+		gap: 20px;
+	}
+
+}
+
+/* 
+	----------------------------------------------------------------
+	1000px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 1000px) {
+
+	.faq-content-inner {
+		padding-top: 0px;
+	}
+
+	.faq-item {
+		margin: 0 0 0 0;
+	}
+
+}
+
+/* 
+	----------------------------------------------------------------
+	800px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 800px) {
+
+	.faq-wrap {
+		display: block;
+	}
+
+	.faq-content-inner {
+		padding-top: 0px;
+	}
+
+	.faq-item {
+		margin: 0 0 0 0;
+	}
+
+}
+
+/* 
+	----------------------------------------------------------------
+	480px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 480px) {
+
+}

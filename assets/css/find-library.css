@@ -1,0 +1,206 @@
+/* 
+	----------------------------------------------------------------
+	Library login
+	----------------------------------------------------------------
+*/
+
+.lib-wrap
+{
+	max-width: 550px;
+	max-height: 620px;
+	margin: 0 auto 50px auto;
+	border: 2px solid #444444;
+	border-radius: 30px;
+	padding: 80px 50px;
+	box-sizing: border-box;
+	background: #F5F5F6;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-image: url(https://lote4kids.com/wp-content/uploads/2022/10/lote-login.gif);
+    background-repeat: no-repeat;
+    background-position: 80% 80%;
+    background-color: #F5F5F6;
+}
+
+.lib__head {
+	font-size: 16px;
+	margin: 0 0 10px 0;
+	color: #222222;
+	line-height: 1.6em;
+}
+
+.lib__text {
+	font-size: 16px;
+	margin: 0 0 150px 0;
+	color: #222222;
+	line-height: 1.6em;
+}
+
+.lib__text a { 
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+.lib__text a:hover {
+	color: #ff9900;
+} 
+
+.lib__reminder {
+	margin: 0 0 10px 0;
+	line-height: 1.4em;
+	font-size: 14px;
+}
+
+.lib__barcode {
+	margin: 0 0 10px 0;
+}
+
+.lib__search {
+	margin: 0 auto 10px auto;
+	max-width: 100%;
+	display: grid;
+	grid-template-columns: calc(80% - 10px) 20%;
+	gap: 10px;
+}
+
+.lib__search input.search-txt {
+    box-sizing: border-box;
+	display: block;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    line-height: normal;
+    color: #555;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .07);
+    border-radius: 3px;
+    padding: 10px;
+    width: 100%;
+    height: 43px;
+}
+
+.lib__search input.search-txt:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255,153,0,0.35);
+    border-color: #ff9900;
+}
+
+.lib__search input.search-txt.not-found {
+    border: 1px solid red;
+}
+
+.lib__search-wrap {
+	position: relative;
+	box-sizing: border-box;
+}
+
+.lib__search .search-btn {
+	/*
+    background: #ff9900;
+    color: #1e1e1e;
+    padding: 14px 12px 10px 12px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-block;
+    box-sizing: border-box;
+    font-weight: 600;
+    position: relative;
+    text-align: center;
+    */
+}
+
+.library-list {
+	display: none;
+}
+
+#suggestions{
+    position: absolute;
+    top: 100%;
+    left: 1px;
+    right: 1px;
+    background: #fff;
+    max-height: 200px;
+    overflow-y: auto;
+    list-style: none;
+    padding: 0;
+    margin: 4px 0 0;
+    z-index: 10;
+}
+
+#suggestions li {
+    padding: 7px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+    border-bottom: 1px solid #efefef;
+    transition: all .25s ease;   
+}
+
+#suggestions li:hover {
+	background: #f2f2f2;
+}
+
+/* 
+	----------------------------------------------------------------
+	1400px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 1400px) {
+
+}
+
+/* 
+	----------------------------------------------------------------
+	1200px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 1200px) {
+
+}
+
+/* 
+	----------------------------------------------------------------
+	1000px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 1000px) {
+
+}
+
+/* 
+	----------------------------------------------------------------
+	800px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 800px) {
+
+	.lib-wrap {
+		max-height: 100%;
+		width: 100%;
+		padding: 30px;
+	}
+
+}
+
+/* 
+	----------------------------------------------------------------
+	480px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 480px) {
+
+	.lib-wrap {
+		border: none;
+		background: none;
+		padding: 0;
+	}
+
+}
