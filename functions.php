@@ -54,6 +54,7 @@ function l4k_loadStyles() {
    
     if (is_page_template('page-templates/page-home.php'))                   { wp_enqueue_style('home', get_stylesheet_directory_uri() . '/assets/css/home.css', [], $assetVersion); }
     if (is_page_template('page-templates/page-home-schools.php'))           { wp_enqueue_style('home', get_stylesheet_directory_uri() . '/assets/css/home-schools.css', [], $assetVersion); }
+    if (is_page_template('page-templates/page-home-libraries.php'))         { wp_enqueue_style('home', get_stylesheet_directory_uri() . '/assets/css/home-libraries.css', [], $assetVersion); }
     if (is_page_template('page-templates/page-avatar.php'))                 { wp_enqueue_style('avatar', get_stylesheet_directory_uri() . '/assets/css/avatar.css', [], $assetVersion); }
     if (is_page_template('page-templates/page-streaks.php'))                { wp_enqueue_style('streaks', get_stylesheet_directory_uri() . '/assets/css/streaks.css', [], $assetVersion); }
     if (is_page_template('page-templates/page-faqs.php'))                   { wp_enqueue_style('faq', get_stylesheet_directory_uri() . '/assets/css/faq.css', [], $assetVersion); }
@@ -124,6 +125,7 @@ function l4k_loadScripts() {
     if (is_singular('playlist'))							                { wp_enqueue_script('playlist', get_stylesheet_directory_uri() . '/assets/js/playlist.js', ['jquery'], $assetVersion, true); }
     if (is_page_template('page-templates/page-home.php'))                   { wp_enqueue_script('home', get_stylesheet_directory_uri() . '/assets/js/home.js', ['jquery'], $assetVersion, true); }
     if (is_page_template('page-templates/page-home-schools.php'))           { wp_enqueue_script('home', get_stylesheet_directory_uri() . '/assets/js/home-schools.js', ['jquery'], $assetVersion, true); }
+    if (is_page_template('page-templates/page-home-libraries.php'))         { wp_enqueue_script('home', get_stylesheet_directory_uri() . '/assets/js/home-libraries.js', ['jquery'], $assetVersion, true); }
     if (is_page_template('page-templates/page-find-library.php'))           { wp_enqueue_script('home', get_stylesheet_directory_uri() . '/assets/js/find-library.js', ['jquery'], $assetVersion, true); }
     if (is_page_template('page-templates/page-faqs.php'))                   { wp_enqueue_script('faq', get_stylesheet_directory_uri() . '/assets/js/faq.js', ['jquery'], $assetVersion, true); }
     if (is_page_template('page-templates/page-member-home.php'))            { wp_enqueue_script('member-home', get_stylesheet_directory_uri() . '/assets/js/member-home.js', ['jquery'], $assetVersion, true); }
