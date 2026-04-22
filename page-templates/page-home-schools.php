@@ -152,14 +152,27 @@ if (!function_exists('hs_get')) {
 	<div class='home-row-3 hs-row'>
 	<div class='_maxwrap'>
 
-		<?php // Curriculum — heading + content centered, image stacked below ?>
+		<?php // Curriculum — heading + content with slideshow below ?>
 		<div class='hs-section hs-stacked'>
 			<h4><?php echo hs_get('curriculum', 'heading'); ?></h4>
 			<div class='hs-section-content'><?php echo hs_get('curriculum', 'content'); ?></div>
-			<?php $curriculum_image = hs_get('curriculum', 'image'); ?>
-			<?php if ($curriculum_image): ?>
-				<div class='hs-stacked-image'>
-					<img src='<?php echo esc_url($curriculum_image); ?>' alt='Curriculum Alignment' />
+
+			<?php
+			$curriculum_group = get_field('curriculum');
+			$curriculum_images = (is_array($curriculum_group) && !empty($curriculum_group['images'])) ? $curriculum_group['images'] : [];
+			?>
+			<?php if (!empty($curriculum_images)): ?>
+				<div class='home-story-slider'>
+					<div class="home-story-slider__track">
+						<?php foreach ($curriculum_images as $slide): ?>
+							<?php $slide_url = $slide['url'] ?? ''; ?>
+							<?php if ($slide_url): ?>
+								<div class='home-story-slide'>
+									<img src='<?php echo esc_url($slide_url); ?>' alt='' aria-hidden='true' />
+								</div>
+							<?php endif; ?>
+						<?php endforeach; ?>
+					</div>
 				</div>
 			<?php endif; ?>
 		</div>

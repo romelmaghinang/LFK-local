@@ -138,14 +138,27 @@ if (!function_exists('hs_get')) {
 	<div class='home-row-3 hs-row'>
 	<div class='_maxwrap'>
 
-		<?php // Community Reach — stacked layout (image centered below content, like Curriculum on schools) ?>
+		<?php // Community Reach — stacked layout with slideshow below content ?>
 		<div class='hs-section hs-stacked'>
 			<h4><?php echo hs_get('community_reach', 'heading'); ?></h4>
 			<div class='hs-section-content'><?php echo hs_get('community_reach', 'content'); ?></div>
-			<?php $community_image = hs_get('community_reach', 'image'); ?>
-			<?php if ($community_image): ?>
-				<div class='hs-stacked-image'>
-					<img src='<?php echo esc_url($community_image); ?>' alt='Community Reach' />
+
+			<?php
+			$community_group = get_field('community_reach');
+			$community_images = (is_array($community_group) && !empty($community_group['images'])) ? $community_group['images'] : [];
+			?>
+			<?php if (!empty($community_images)): ?>
+				<div class='home-story-slider'>
+					<div class="home-story-slider__track">
+						<?php foreach ($community_images as $slide): ?>
+							<?php $slide_url = $slide['url'] ?? ''; ?>
+							<?php if ($slide_url): ?>
+								<div class='home-story-slide'>
+									<img src='<?php echo esc_url($slide_url); ?>' alt='' aria-hidden='true' />
+								</div>
+							<?php endif; ?>
+						<?php endforeach; ?>
+					</div>
 				</div>
 			<?php endif; ?>
 		</div>

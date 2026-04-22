@@ -98,6 +98,26 @@ jQuery(function ($) {
 
     /*
         ----------------------------------------------------------------
+        Curriculum image slideshow (matches home.js .home-story-slider)
+        ----------------------------------------------------------------
+    */
+
+    if ($('.home-story-slider__track').length && typeof $.fn.slick === 'function') {
+        $('.home-story-slider__track').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            arrows: true,
+            dots: false,
+            prevArrow: '<button type="button" class="slick-prev slick-arrow" aria-label="Previous slide"><i class="lni lni-arrow-left" aria-hidden="true"></i></button>',
+            nextArrow: '<button type="button" class="slick-next slick-arrow" aria-label="Next slide"><i class="lni lni-arrow-right" aria-hidden="true"></i></button>',
+        });
+    }
+
+    /*
+        ----------------------------------------------------------------
         Promo video play
         ----------------------------------------------------------------
     */

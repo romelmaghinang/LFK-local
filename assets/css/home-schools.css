@@ -303,6 +303,66 @@
 
 /*
 	----------------------------------------------------------------
+	Slideshow (matches home.css .home-story-slider pattern)
+	----------------------------------------------------------------
+*/
+
+.home-story-slider__track {
+	display: none;
+}
+
+.home-story-slider {
+	max-width: 850px;
+	box-sizing: border-box;
+	margin: 25px auto 10px auto;
+	text-align: center;
+	display: block;
+	position: relative;
+}
+
+.home-story-slider .slick-prev,
+.home-story-slider .slick-next {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 42px;
+	height: 42px;
+	padding: 25px;
+	border: 4px solid #fff;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	color: #fff;
+	font-size: 32px;
+	line-height: 1;
+	background: none;
+	font-weight: bold;
+}
+
+.home-story-slider .slick-prev:hover,
+.home-story-slider .slick-next:hover {
+	background: rgba(255,255,255,0.45);
+}
+
+.home-story-slider .slick-prev { left: -120px; }
+.home-story-slider .slick-next { right: -120px; }
+
+.home-story-slide {
+	cursor: default;
+}
+
+.home-story-slide img {
+	width: 100%;
+	display: block;
+	margin: 15px auto;
+	border: 5px solid #ffffff;
+	box-sizing: border-box;
+}
+
+/*
+	----------------------------------------------------------------
 	Quotes
 	----------------------------------------------------------------
 */
@@ -346,6 +406,13 @@
 	.home-hero > *:last-child {
 		align-self: center;
 	}
+
+	.home-story-slider {
+		max-width: 70%;
+	}
+
+	.home-story-slider .slick-prev { left: -80px; }
+	.home-story-slider .slick-next { right: -80px; }
 
 }
 
@@ -417,6 +484,19 @@
 	.hs-btn-row {
 		flex-direction: column;
 		align-items: stretch;
+	}
+
+	.home-story-slider {
+		max-width: 100%;
+	}
+
+	.home-story-slider .slick-prev,
+	.home-story-slider .slick-next {
+		display: none !important;
+	}
+
+	.home-story-slide img {
+		margin: 0;
 	}
 
 }
