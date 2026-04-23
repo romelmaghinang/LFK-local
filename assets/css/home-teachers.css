@@ -1,0 +1,565 @@
+/*
+	----------------------------------------------------------------
+	Home Teachers — base
+	Mirrors home-schools layout (rows, branches, typography) minus
+	the "Find My School" block, plus teacher-specific blocks:
+	- Reversed hero (image on the left for Lesson Planning)
+	- Subscription price cards (flags + amounts)
+	- Comparison table (Teacher vs. School)
+	----------------------------------------------------------------
+*/
+
+.main-mid {
+
+}
+
+/*
+	----------------------------------------------------------------
+	Row 1 — Intro
+	----------------------------------------------------------------
+*/
+
+.home-row-1 {
+	padding: 0 0 60px 0;
+}
+
+.home-hero-wrap {
+	max-width: 700px;
+	box-sizing: border-box;
+	margin: 0 auto 20px auto;
+	line-height: 1.8em;
+}
+
+.home-hero {
+	display: grid;
+	grid-template-columns: 1fr 200px;
+	gap: 2rem;
+}
+
+.home-hero.ht-reverse {
+	grid-template-columns: 200px 1fr;
+}
+
+.home-hero .for-mobile {
+	display: none;
+}
+
+.home-hero h1,
+.home-hero h4 {
+	line-height: 1.2em;
+}
+
+.home-hero-img {
+	display: block;
+	width: 100%;
+}
+
+/*
+	----------------------------------------------------------------
+	Shared rows + sections (identical pattern to home-schools)
+	----------------------------------------------------------------
+*/
+
+.hs-row {
+	position: relative;
+	padding-top: 100px;
+	padding-bottom: 60px;
+}
+
+.home-row-2,
+.home-row-4 {
+	background-color: #fbebcd;
+}
+
+.hs-row::before {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: -45px;
+	height: 120px;
+	width: 100%;
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.home-row-2::before { background-image: url('../img/branch-right-trans.png'); }
+.home-row-3::before { background-image: url('../img/branch-left-trans.png'); }
+.home-row-4::before { background-image: url('../img/branch-right-trans.png'); }
+.home-row-5::before { background-image: url('../img/branch-left-trans.png'); }
+
+.hs-section {
+	max-width: 800px;
+	box-sizing: border-box;
+	margin: 0 auto 40px auto;
+	line-height: 1.7em;
+}
+
+.hs-section:last-child {
+	margin-bottom: 0;
+}
+
+.hs-section h4 {
+	margin: 0 0 12px 0;
+}
+
+.hs-section-content p {
+	margin: 0 0 12px 0;
+}
+
+/*
+	----------------------------------------------------------------
+	Video block (Why Teachers Choose)
+	----------------------------------------------------------------
+*/
+
+.hs-video {
+	margin: 25px auto;
+	position: relative;
+	max-width: 800px;
+	aspect-ratio: 16/9;
+}
+
+.hs-video .video-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.7);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	z-index: 2;
+}
+
+.hs-video .video-overlay .play-btn-wrap {
+	width: 90px;
+	height: 70px;
+	background: #fff;
+	border-radius: 18px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all .25s ease;
+	border: 2px solid #fff;
+}
+
+.hs-video .video-overlay .play-btn-wrap:hover {
+	border: 2px solid #f90;
+}
+
+.hs-video iframe {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+/*
+	----------------------------------------------------------------
+	Slideshow (matches home-schools .home-story-slider pattern)
+	----------------------------------------------------------------
+*/
+
+.home-story-slider__track {
+	display: none;
+}
+
+.home-story-slider {
+	max-width: 850px;
+	box-sizing: border-box;
+	margin: 25px auto 10px auto;
+	text-align: center;
+	display: block;
+	position: relative;
+}
+
+.home-story-slider .slick-prev,
+.home-story-slider .slick-next {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 42px;
+	height: 42px;
+	padding: 25px;
+	border: 4px solid #fff;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	color: #fff;
+	font-size: 32px;
+	line-height: 1;
+	background: none;
+	font-weight: bold;
+}
+
+.home-story-slider .slick-prev:hover,
+.home-story-slider .slick-next:hover {
+	background: rgba(255,255,255,0.45);
+}
+
+.home-story-slider .slick-prev { left: -120px; }
+.home-story-slider .slick-next { right: -120px; }
+
+.home-story-slide {
+	cursor: default;
+}
+
+.home-story-slide img {
+	width: 100%;
+	display: block;
+	margin: 15px auto;
+	border: 5px solid #ffffff;
+	box-sizing: border-box;
+}
+
+/*
+	----------------------------------------------------------------
+	Button rows
+	----------------------------------------------------------------
+*/
+
+.hs-btn-row {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 15px;
+	margin: 20px auto 0 auto;
+}
+
+/*
+	----------------------------------------------------------------
+	Supporting list (For Teachers / For Students)
+	----------------------------------------------------------------
+*/
+
+.hs-supporting-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.hs-supporting-list li {
+	margin: 0 0 10px 0;
+	line-height: 1.6em;
+}
+
+.hs-supporting-list li strong {
+	font-weight: 700;
+}
+
+/*
+	----------------------------------------------------------------
+	Subscription price cards
+	----------------------------------------------------------------
+*/
+
+.ht-price-row {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	margin: 30px auto 15px auto;
+	max-width: 700px;
+}
+
+/* Price card = _btn base + size/layout overrides only */
+._btn.ht-price-card {
+	padding: 18px 15px;
+	text-align: center;
+	text-decoration: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 6px;
+	line-height: 1.3em;
+	white-space: normal;
+	font-size: 16px;
+	font-weight: 500;
+	height: auto;
+}
+
+._btn.ht-price-card:hover {
+	transform: translateY(-3px);
+	text-decoration: none;
+}
+
+.ht-price-flag {
+	width: 65px;
+	height: 45px;
+	overflow: hidden;
+	border-radius: 6px;
+	margin-bottom: 4px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.ht-price-flag img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+.ht-price-label {
+	font-weight: 700;
+	font-size: 17px;
+}
+
+.ht-price-amount {
+	font-weight: 700;
+	font-size: 22px;
+	line-height: 1.1em;
+}
+
+.ht-price-unit {
+	font-size: 13px;
+}
+
+.ht-price-helper {
+	max-width: 700px;
+	margin: 10px auto 20px auto;
+	text-align: center;
+	font-size: 14px;
+	font-style: italic;
+	line-height: 1.5em;
+}
+
+/*
+	----------------------------------------------------------------
+	Comparison Table (Teacher vs. School Subscriptions)
+	----------------------------------------------------------------
+*/
+
+.ht-compare-section {
+	margin-top: 50px;
+}
+
+.ht-compare {
+	width: 100%;
+	max-width: 800px;
+	margin: 0 auto;
+	border-collapse: collapse;
+	background: transparent;
+}
+
+.ht-compare thead th {
+	background: transparent;
+	border-bottom: 4px solid #111;
+	padding: 14px 10px;
+	font-weight: 700;
+	font-size: 18px;
+	text-align: center;
+}
+
+.ht-compare thead th.ht-compare-title {
+	text-align: left;
+	font-size: 20px;
+}
+
+.ht-compare tbody tr:nth-child(odd) td {
+	background: #a9bfbf;
+}
+
+.ht-compare tbody tr:nth-child(even) td {
+	background: transparent;
+}
+
+.ht-compare tbody td {
+	padding: 14px 15px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 16px;
+}
+
+.ht-compare tbody td.ht-compare-feature {
+	text-align: center;
+	font-weight: 500;
+}
+
+.ht-compare-cell .ht-compare-check {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: #3aaf3a;
+	font-size: 28px;
+	line-height: 1;
+	font-weight: 700;
+}
+
+.ht-compare-cell .ht-compare-check-img {
+	display: inline-block;
+	width: 36px;
+	height: auto;
+	vertical-align: middle;
+}
+
+.ht-compare-cell .ht-compare-text {
+	font-weight: 500;
+}
+
+/*
+	----------------------------------------------------------------
+	Quotes
+	----------------------------------------------------------------
+*/
+
+.hs-quotes-list {
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+
+.hs-quote-item {
+	align-items: center;
+}
+
+.hs-quote-text p {
+	margin: 0 0 10px 0;
+	font-style: italic;
+}
+
+.hs-quote-source {
+	display: block;
+	text-align: right;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+/*
+	----------------------------------------------------------------
+	1000px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 1000px) {
+
+	.home-hero {
+		gap: 10px;
+		grid-template-columns: 1fr 150px;
+	}
+
+	.home-hero.ht-reverse {
+		grid-template-columns: 150px 1fr;
+	}
+
+	.home-hero > *:last-child {
+		align-self: center;
+	}
+
+	.ht-price-row {
+		gap: 12px;
+	}
+
+	.home-story-slider {
+		max-width: 70%;
+	}
+
+	.home-story-slider .slick-prev { left: -80px; }
+	.home-story-slider .slick-next { right: -80px; }
+
+}
+
+/*
+	----------------------------------------------------------------
+	800px snap — switch to mobile branches
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 800px) {
+
+	.home-row-1 {
+		padding-bottom: 50px;
+	}
+
+	.hs-row {
+		padding-top: 80px;
+		padding-bottom: 50px;
+	}
+
+	.home-row-2::before,
+	.home-row-4::before {
+		background-image: url('../img/branch-right-trans-mobile.png');
+	}
+
+	.home-row-3::before,
+	.home-row-5::before {
+		background-image: url('../img/branch-left-trans-mobile.png');
+	}
+
+}
+
+/*
+	----------------------------------------------------------------
+	600px snap — stack vertical
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 600px) {
+
+	.home-hero,
+	.home-hero.ht-reverse {
+		display: block;
+	}
+
+	.home-hero-img {
+		display: none;
+	}
+
+	.home-hero .for-mobile {
+		display: block;
+		width: 100px;
+		float: right;
+		margin: 0 0 10px 10px;
+	}
+
+	.home-hero .for-mobile img {
+		display: block;
+	}
+
+	.hs-btn-row {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.ht-price-row {
+		grid-template-columns: 1fr;
+		max-width: 280px;
+	}
+
+	.ht-compare thead th,
+	.ht-compare tbody td {
+		padding: 10px 6px;
+		font-size: 14px;
+	}
+
+	.ht-compare thead th {
+		font-size: 15px;
+	}
+
+	.ht-compare thead th.ht-compare-title {
+		font-size: 16px;
+	}
+
+	.ht-compare-cell .ht-compare-check-img {
+		width: 26px;
+	}
+
+	.home-story-slider {
+		max-width: 100%;
+	}
+
+	.home-story-slider .slick-prev,
+	.home-story-slider .slick-next {
+		display: none !important;
+	}
+
+	.home-story-slide img {
+		margin: 0;
+	}
+
+}
