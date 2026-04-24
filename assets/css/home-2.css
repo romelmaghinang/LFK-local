@@ -1,0 +1,257 @@
+/*
+	----------------------------------------------------------------
+	Home 2 — Row 1 reuses home.css (hero + stats + language slider)
+	This file adds styles for Rows 2, 3, and 4.
+	Branch dividers + row banding mirror home-schools.
+	----------------------------------------------------------------
+*/
+
+/*
+	----------------------------------------------------------------
+	Row 1 tweaks — widen stats wrap to fit 4 stats in one row
+	(Books Published / Languages Released / Community Reach / Books Each Month)
+	----------------------------------------------------------------
+*/
+
+.home-stats-wrap {
+	max-width: 950px;
+}
+
+.home-stats-numbers {
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.home-lang-heading {
+	text-align: center;
+	margin: 25px auto 0 auto;
+}
+
+.home-lang-heading h3 {
+	margin: 0;
+}
+
+@media (max-width: 900px) {
+	.home-stats-wrap {
+		max-width: 700px;
+	}
+	.home-stats-numbers {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 480px) {
+	.home-stats-numbers {
+		grid-template-columns: 1fr;
+	}
+}
+
+
+/*
+	----------------------------------------------------------------
+	Shared row pattern (branch dividers + banding)
+	----------------------------------------------------------------
+*/
+
+.h2-row {
+	position: relative;
+	padding-top: 100px;
+	padding-bottom: 60px;
+}
+
+.home-row-2,
+.home-row-4 {
+	background-color: #fbebcd;
+}
+
+.h2-row::before {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: -45px;
+	height: 120px;
+	width: 100%;
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.home-row-2::before { background-image: url('../img/branch-right-trans.png'); }
+.home-row-3::before { background-image: url('../img/branch-left-trans.png'); }
+.home-row-4::before { background-image: url('../img/branch-right-trans.png'); }
+
+.h2-section {
+	max-width: 800px;
+	box-sizing: border-box;
+	margin: 0 auto 40px auto;
+	line-height: 1.7em;
+}
+
+.h2-section:last-child {
+	margin-bottom: 0;
+}
+
+.h2-section h4 {
+	margin: 0 0 12px 0;
+}
+
+.h2-section-content p {
+	margin: 0 0 12px 0;
+}
+
+/*
+	----------------------------------------------------------------
+	Row 2 — Who Can Use + Audience cards
+	----------------------------------------------------------------
+*/
+
+.h2-audience-list {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 30px 0;
+}
+
+.h2-audience-list li {
+	margin: 0 0 10px 0;
+	line-height: 1.6em;
+}
+
+.h2-audience-list li strong {
+	font-weight: 700;
+}
+
+.h2-card-row {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.h2-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 10px;
+}
+
+.h2-card-img {
+	width: 100%;
+	max-width: 180px;
+	margin: 0 auto;
+}
+
+.h2-card-img img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+._btn.h2-card-btn {
+	padding: 10px 18px;
+	font-size: 15px;
+	font-weight: 600;
+	white-space: nowrap;
+}
+
+/*
+	----------------------------------------------------------------
+	Row 3 — Who Brings Stories to Life + carousel
+	(reuses .home-story-slider / .home-story-slide from home.css)
+	----------------------------------------------------------------
+*/
+
+.h2-stacked {
+	text-align: left;
+}
+
+/*
+	----------------------------------------------------------------
+	Row 4 — Quotes (same pattern as home-hero + home-schools quotes)
+	----------------------------------------------------------------
+*/
+
+.h2-quotes-list {
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+
+.h2-quote-item {
+	align-items: center;
+}
+
+.h2-quote-text p {
+	margin: 0 0 10px 0;
+	font-style: italic;
+}
+
+.h2-quote-source {
+	display: block;
+	text-align: right;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+/*
+	----------------------------------------------------------------
+	1000px snap
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 1000px) {
+
+	.h2-card-row {
+		gap: 12px;
+	}
+
+	.h2-card-img {
+		max-width: 130px;
+	}
+
+}
+
+/*
+	----------------------------------------------------------------
+	800px snap — switch to mobile branches
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 800px) {
+
+	.h2-row {
+		padding-top: 80px;
+		padding-bottom: 50px;
+	}
+
+	.home-row-2::before,
+	.home-row-4::before {
+		background-image: url('../img/branch-right-trans-mobile.png');
+	}
+
+	.home-row-3::before {
+		background-image: url('../img/branch-left-trans-mobile.png');
+	}
+
+}
+
+/*
+	----------------------------------------------------------------
+	600px snap — stack vertical
+	----------------------------------------------------------------
+*/
+
+@media (max-width: 600px) {
+
+	.h2-card-row {
+		grid-template-columns: 1fr;
+		max-width: 280px;
+	}
+
+	.h2-card-img {
+		max-width: 160px;
+	}
+
+}

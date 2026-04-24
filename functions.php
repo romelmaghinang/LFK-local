@@ -53,6 +53,10 @@ function l4k_loadStyles() {
     // load only styles specific per page
    
     if (is_page_template('page-templates/page-home.php'))                   { wp_enqueue_style('home', get_stylesheet_directory_uri() . '/assets/css/home.css', [], $assetVersion); }
+    if (is_page_template('page-templates/page-home-2.php'))                 {
+        wp_enqueue_style('home',   get_stylesheet_directory_uri() . '/assets/css/home.css',   [], $assetVersion);
+        wp_enqueue_style('home-2', get_stylesheet_directory_uri() . '/assets/css/home-2.css', ['home'], $assetVersion);
+    }
     if (is_page_template('page-templates/page-home-schools.php'))           { wp_enqueue_style('home', get_stylesheet_directory_uri() . '/assets/css/home-schools.css', [], $assetVersion); }
     if (is_page_template('page-templates/page-home-libraries.php'))         { wp_enqueue_style('home', get_stylesheet_directory_uri() . '/assets/css/home-libraries.css', [], $assetVersion); }
     if (is_page_template('page-templates/page-home-teachers.php'))          { wp_enqueue_style('home', get_stylesheet_directory_uri() . '/assets/css/home-teachers.css', [], $assetVersion); }
@@ -125,6 +129,7 @@ function l4k_loadScripts() {
     if (is_404())							                				{ wp_enqueue_script('language', get_stylesheet_directory_uri() . '/assets/js/404.js', ['jquery'], $assetVersion, true); }
     if (is_singular('playlist'))							                { wp_enqueue_script('playlist', get_stylesheet_directory_uri() . '/assets/js/playlist.js', ['jquery'], $assetVersion, true); }
     if (is_page_template('page-templates/page-home.php'))                   { wp_enqueue_script('home', get_stylesheet_directory_uri() . '/assets/js/home.js', ['jquery'], $assetVersion, true); }
+    if (is_page_template('page-templates/page-home-2.php'))                 { wp_enqueue_script('home', get_stylesheet_directory_uri() . '/assets/js/home-2.js', ['jquery'], $assetVersion, true); }
     if (is_page_template('page-templates/page-home-schools.php'))           { wp_enqueue_script('home', get_stylesheet_directory_uri() . '/assets/js/home-schools.js', ['jquery'], $assetVersion, true); }
     if (is_page_template('page-templates/page-home-libraries.php'))         { wp_enqueue_script('home', get_stylesheet_directory_uri() . '/assets/js/home-libraries.js', ['jquery'], $assetVersion, true); }
     if (is_page_template('page-templates/page-home-teachers.php'))          { wp_enqueue_script('home', get_stylesheet_directory_uri() . '/assets/js/home-teachers.js', ['jquery'], $assetVersion, true); }
